@@ -70,8 +70,8 @@ def takeCommand():
         
 def site(query):
     req = query.split()
-    say(f"Opening {req[1]} website...")
-    webbrowser.open(f"https://{req[1].lower()}.com")
+    say(f"Opening {req[1]}...")
+    webbrowser.open(f"https://{req[1].lower()}")
     
 def start(query):
     req = query.split()
