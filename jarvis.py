@@ -72,6 +72,11 @@ def site(query):
     req = query.split()
     say(f"Opening {req[1]} website...")
     webbrowser.open(f"https://{req[1].lower()}.com")
+    
+def start(query):
+    req = query.split()
+    say(f'Opening {req[1]}...')
+    os.system(f"start {req[1]}")
 
 if __name__ == '__main__':
     print('Welcome to Jarvis AI')
@@ -85,10 +90,7 @@ if __name__ == '__main__':
         #     if f"Open {site[0]}".lower() in query.lower():
         #         say(f"Opening {site[0]} sir...")
         #         webbrowser.open(site[1])
-        # todo: Add a feature to play a specific song
-        # if "open music" in query:
-        #     musicPath = "/Users/harry/Downloads/downfall-21371.mp3"
-        #     os.system(f"open {musicPath}")
+       
 
         if "the time" in query:
             time = datetime.datetime.now().strftime("%H:%M:%S")
@@ -100,8 +102,8 @@ if __name__ == '__main__':
         elif "Using artificial intelligence".lower() in query.lower():
             ai(prompt=query)
 
-        elif "Jarvis Quit".lower() in query.lower():
-            exit()
+        elif "open".lower() in query.lower():
+            start(query)
 
         elif "reset chat".lower() in query.lower():
             chatStr = ""
